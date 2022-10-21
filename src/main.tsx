@@ -18,16 +18,16 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <Routes>
       <Route path='/' element={<App />}>
         <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/products' element={<Products />} />
-        <Route path="/sale" element={<Sale />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route path='about' element={<About />} />
+        <Route path='products' element={<Products />} />
+        <Route path="sale" element={<Sale />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="checkout" element={<Checkout />} />
 
         {/* Auth pages */}
 
-        <Route path="/auth/login" element={<Login />} />
-        <Route path="/auth/signup" element={<SignUp />} />
+        <Route path="auth/login" element={<Login />} />
+        <Route path="auth/signup" element={<SignUp />} />
         <Route path="*" element={<Notfound />} />
       </Route>
     </Routes>
