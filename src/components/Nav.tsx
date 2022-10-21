@@ -3,50 +3,27 @@ import logo from '../assets/Logo.svg'
 import {FiSearch} from 'react-icons/fi'
 import {FiUser} from 'react-icons/fi'
 import {FiShoppingBag} from 'react-icons/fi'
+import menu from '../assets/hamburger icon.png'
+import { Link } from 'react-router-dom'
 const Nav = () => {
-
-    const [active, setActive] = useState("footwear")
-    const changeActive = (el:string)=>{
-        setActive(el)
-    }
-
   return(
-    <nav className='flex items-center justify-between absolute top-0 w-full px-24'>
-        <div className=" flex items-start justify-center pt-4">
-            <img src={logo} className="w-[42px] h-[42px]" alt="" />
+    <nav className='w-full h-[6rem] bg-[#F5F5F5] flex items-center justify-around gap-[15rem] lg:gap-[5rem] lg:px-[5rem] md:gap-[22rem] transition-all overflow-hidden'>
+        <img src={logo} alt="logo" className='w-[2rem] lg:w-[3rem] transition-all' />
+        <div className="hidden lg:flex lg:h-[5rem] flex-grow items-center justify-center gap-[5rem] transition-all">
+            <Link to='/' className='text-lg font-medium'>Foot wear</Link>
+            <Link to='/about' className='text-lg font-medium'>About us</Link>
+            <Link to='/products' className='text-lg font-medium'>Products</Link>
+            <Link to='/sale' className='text-lg font-medium'>Sale</Link>
         </div>
-        <div className="">
-            <div className="flex gap-7">
-                <a onClick={()=>changeActive("footwear")} href="#" className={`${active=="footwear"?"text-[#FF3C78]":"text-slate-900"} p-2 font-regular text-lg hover:text-[#FF3C78] relative`}>Footwear
-                    {active === "footwear" && <div className="absolute -bottom-1 left-[40%] w-2 h-2 rounded-full bg-[#FF3C78]"></div>}
-                </a>
-                <a onClick={()=>changeActive("about")} href="#" className={`${active=="about"?"text-[#FF3C78]":"text-slate-800"} p-2 font-regular text-lg hover:text-[#FF3C78] relative`}>About us
-                    {active === "about" && <div className="absolute -bottom-1 left-[40%] w-2 h-2 rounded-full bg-[#FF3C78]"></div>}
-                </a>
-                <a onClick={()=>changeActive("products")} href="#" className={`${active=="products"?"text-[#FF3C78]":"text-slate-800"} p-2 font-regular text-lg hover:text-[#FF3C78] relative`}>Products
-                    {active === "products" && <div className="absolute -bottom-1 left-[40%] w-2 h-2 rounded-full bg-[#FF3C78]"></div>}
-                </a>
-                <a onClick={()=>changeActive("sale")} href="#" className={`${active=="sale"?"text-[#FF3C78]":"text-slate-800"} p-2 font-regular text-lg hover:text-[#FF3C78] relative`}>Sale
-                    {active === "sale" && <div className="absolute -bottom-1 left-[40%] w-2 h-2 rounded-full bg-[#FF3C78]"></div>}
-                </a>
-               
+        <div className="w-[10rem] h-[4rem] bg-[bue] flex items-center justify-center gap-8 transition-all">
+            <FiSearch className='w-[1.3rem] h-[1.3rem] md:hidden lg:block font-black' />
+            <FiUser className='w-[1.5rem] h-[1.5rem] hidden lg:block' />
+
+            <div className="w-fit h-fit relative md:hidden ">
+                <FiShoppingBag className='w-[1.5rem] h-[1.5rem] font-bold' />
+                <div className='absolute bg-[#FF3C78] w-[1.2rem] h-[1.2rem] rounded-full grid place-content-center text-white right-[-.5rem] top-[.75rem]'>3</div>
             </div>
-        </div>
-        <div className="">
-            <div className="flex gap-8">
-                <a href="#">
-                    <FiSearch className='w-6 h-6' />
-                </a>
-                <a href="#">
-                    <FiUser className='w-6 h-6' />
-                </a>
-                <a href="#" className='relative'>
-                    <FiShoppingBag className='w-6 h-6' />
-                    <div className="absolute w-4 h-4 bg-[#FF3C78] flex items-center justify-center rounded-full -bottom-1 -right-1">
-                        <p className='text-white text-[9px]'>3</p>
-                    </div>
-                </a>
-            </div>
+            <img src={menu} alt="" />
         </div>
     </nav>
   )
