@@ -7,9 +7,9 @@ import menu from "../assets/hamburger icon.png";
 import { Link, NavLink } from "react-router-dom";
 
 interface Link {
-  to: string,
-  end: boolean,
-  displayName: string
+  to: string;
+  end: boolean;
+  displayName: string;
 }
 const Nav = () => {
   const links: Link[] = [
@@ -42,7 +42,7 @@ const Nav = () => {
         alt="logo"
         className="w-[2rem] lg:w-[3rem] transition-all"
       />
-      <div className="hidden lg:flex lg:h-[5rem] flex-grow items-center justify-center gap-[5rem] transition-all">
+      <div className="hidden lg:flex lg:h-[5rem] flex-grow items-center justify-center gap-[5rem] transition-all self-end">
         {links.map((link) => {
           return (
             <NavLink
@@ -50,8 +50,8 @@ const Nav = () => {
               end
               className={({ isActive }) =>
                 isActive
-                  ? `text-lg font-medium text-[#0A083A] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] after:rounded-full after:bg-[#FF3C78]`
-                  : `text-lg font-medium text-[#0A083A] grid grid-cols-1 justify-items-center whitespace-nowrap`
+                  ? `text-lg font-medium text-[#0A083A] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] after:rounded-full after:bg-[#FF3C78] transition-all duration-1000`
+                  : `text-lg font-medium text-[#0A083A] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] transition-all duration-1000`
               }
             >
               {link.displayName}
@@ -63,7 +63,7 @@ const Nav = () => {
         <FiSearch className="w-[1.3rem] lg:w-[2rem] miniTablet:w-[3rem] miniTablet:h-[1.5rem] lg:h-[1.5rem] h-[1.3rem] sm:w-[1rem] block md:hidden lg:block font-black" />
         <FiUser className="w-[1.5rem] h-[1.5rem] hidden lg:block" />
 
-        <Link to='/cart' className="w-fit h-fit relative md:hidden lg:block">
+        <Link to="/cart" className="w-fit h-fit relative md:hidden lg:block">
           <FiShoppingBag className="w-[1.5rem] sm:w-[1rem] miniTablet:w-[1.75rem] lg:w-[2rem] h-[1.5rem] font-bold" />
           <div className="absolute bg-[#FF3C78] w-[1.2rem] sm:w-[.9rem] sm:h-[.9rem] lg:w-[1rem] lg:h-[1rem] h-[1.2rem] sm:text-xs rounded-full grid place-content-center text-white right-[-.5rem] miniTablet:right-[-.3rem]  lg:right-[-.3rem] top-[.75rem]">
             3
