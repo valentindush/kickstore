@@ -50,7 +50,7 @@ const Nav = () => {
               end
               className={({ isActive }) =>
                 isActive
-                  ? `text-lg font-medium text-[#0A083A] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] after:rounded-full after:bg-[#FF3C78] transition-all duration-1000`
+                  ? `text-lg font-medium text-[#0A083A] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] after:rounded-full after:bg-[#FF3C78] transition-all duration-1000 after:animate-bounce `
                   : `text-lg font-medium text-[#0A083A] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] transition-all duration-1000`
               }
             >
