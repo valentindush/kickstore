@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import logo from "../assets/Logo.svg";
 import { FiSearch } from "react-icons/fi";
 import { FiUser } from "react-icons/fi";
@@ -37,6 +37,8 @@ const Nav = () => {
     },
   ];
 
+  const homeLinkRef = useRef<HTMLAnchorElement>(null);
+
 
   const [ isDisplayed, setIsDisplayed ] = useState<Boolean>(false);
 
@@ -45,7 +47,8 @@ const Nav = () => {
       <img
         src={logo}
         alt="logo"
-        className="w-[2rem] lg:w-[3rem] transition-all"
+        className="w-[2rem] lg:w-[3rem] transition-all cursor-pointer"
+        onClick={() => homeLinkRef.current?.click()}
       />
       <div className="hidden lg:flex lg:h-[5rem] flex-grow items-center justify-center gap-[5rem] transition-all self-end">
         {links.map((link) => {
@@ -58,6 +61,7 @@ const Nav = () => {
                   ? `text-lg font-medium text-[#FF3C78] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] after:rounded-full after:bg-[#FF3C78] transition-all duration-700 after:animate-ping `
                   : `text-lg font-medium text-[#0A083A] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] transition-all duration-1000`
               }
+              ref={ link.to === '/' ? homeLinkRef : null }
               key={link.to}
             >
               {link.displayName}
