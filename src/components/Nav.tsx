@@ -5,6 +5,8 @@ import { FiUser } from "react-icons/fi";
 import { FiShoppingBag } from "react-icons/fi";
 import menu from "../assets/hamburger icon.png";
 import { Link, NavLink } from "react-router-dom";
+import ReactDropdown from "react-dropdown";
+import 'react-dropdown/style.css';
 
 interface Link {
   to: string;
@@ -35,6 +37,9 @@ const Nav = () => {
     },
   ];
 
+
+  const [ isDisplayed, setIsDisplayed ] = useState<Boolean>(false);
+
   return (
     <nav className="w-full h-[6rem] bg-[#F5F5F5] flex items-center justify-around px-[7rem] miniTablet:gap-[18rem] gap-[12rem] lg:gap-[5rem] lg:px-[5rem] md:gap-[22rem] transition-all overflow-hidden">
       <img
@@ -50,9 +55,10 @@ const Nav = () => {
               end
               className={({ isActive }) =>
                 isActive
-                  ? `text-lg font-medium text-[#0A083A] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] after:rounded-full after:bg-[#FF3C78] transition-all duration-1000 after:animate-bounce `
+                  ? `text-lg font-medium text-[#FF3C78] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] after:rounded-full after:bg-[#FF3C78] transition-all duration-700 after:animate-ping `
                   : `text-lg font-medium text-[#0A083A] grid grid-cols-1 justify-items-center whitespace-nowrap after:w-[.5rem] after:h-[.5rem] transition-all duration-1000`
               }
+              key={link.to}
             >
               {link.displayName}
             </NavLink>
@@ -72,8 +78,27 @@ const Nav = () => {
         <img
           src={menu}
           alt=""
-          className="sm:w-[1rem] lg:hidden miniTablet:w-[2rem]"
+          className="sm:w-[1rem] lg:hidden miniTablet:w-[2rem] cursor-pointer"
+          onClick={() => setIsDisplayed(prev => !prev)}
         />
+      </div>
+      <div className={`${!isDisplayed ? 'animate-nav-hide h-0 md:h-0 miniTablet:h-0 md:animate-nav-display-hide miniTablet:animate-nav-display-hide' : 'h-[8rem] md:h-[10rem]' } lg:hidden w-[10rem]  md:w-[12rem] miniTablet:w-[15rem] absolute top-[4rem] right-3 flex flex-col justify-center transition-all duration-300 overflow-hidden gap-2`} style={{ boxShadow: '#d3d3d3 0px 2px 20px 0px'}}>
+        {links.map((link) => {
+          return (
+            <NavLink
+              to={link.to}
+              end
+              className={({ isActive }) =>
+                isActive
+                  ? `w-full font-normal text-sm md:text-[1rem] text-[#0A083A] flex flex-col items-start whitespace-nowrap after:w-[.3rem] after:h-[.3rem] after:ml-3 after:rounded-full after:bg-[#FF3C78] after:transition-all after:duration-1000 transition-all duration-1000 after:animate-pulse pl-8 hover:pl-10 `
+                  : `w-full font-normal text-sm md:text-[1rem] text-[#0A083A] flex flex-col items-start whitespace-nowrap after:w-[.3rem] after:h-[.3rem] transition-all duration-1000 pl-8 hover:pl-10 `
+              }
+              key={link.to}
+            >
+              {link.displayName}
+            </NavLink>
+          );
+        })}
       </div>
     </nav>
   );
