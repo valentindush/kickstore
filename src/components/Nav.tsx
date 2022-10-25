@@ -86,7 +86,7 @@ const Nav = () => {
           onClick={() => setIsDisplayed(prev => !prev)}
         />
       </div>
-      <div className={`${!isDisplayed ? 'animate-nav-hide h-0 md:h-0 miniTablet:h-0 md:animate-nav-display-hide miniTablet:animate-nav-display-hide' : 'h-[8rem] md:h-[10rem]' } lg:hidden w-[10rem]  md:w-[12rem] miniTablet:w-[15rem] absolute top-[4rem] right-3 flex flex-col justify-center transition-all duration-300 overflow-hidden gap-2`} style={{ boxShadow: '#d3d3d3 0px 2px 20px 0px'}}>
+      <div className={`${!isDisplayed ? 'animate-nav-hide h-0 md:h-0 miniTablet:h-0 md:animate-nav-display-hide miniTablet:animate-nav-display-hide' : 'h-[8rem] md:h-[10rem]' } lg:hidden bg-white w-[10rem]  md:w-[12rem] miniTablet:w-[15rem] absolute top-[4.5rem] right-3 miniTablet:right-[7rem] sm:right-[1rem] flex flex-col justify-center transition-all duration-300 overflow-hidden gap-2`} style={{ boxShadow: '#d3d3d3 0px 2px 20px 0px'}}>
         {links.map((link) => {
           return (
             <NavLink

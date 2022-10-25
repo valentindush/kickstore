@@ -40,6 +40,7 @@ module.exports = {
         "nav-display": "navDisplay .2s ease-in",
         "nav-display-hide": "navDisplayAnimate .2s ease-in",
       },
+      gradientColorStops: {},
     },
   },
   plugins: [],
