@@ -41,7 +41,7 @@ const FeaturedPros = () => {
     <div className=" w-auto flex items-between justify-center">
         <h1 className="text-2xl font-bold text-[#0A083A]">Featured Products</h1>
     </div>
-    <div className="flex flex-col items-center justify-center gap-6">
+    <div className="flex flex-col items-center justify-center gap-6 md:flex-row md:flex-wrap">
         {featuredProducts.map((product: FeaturedPro) => {
         const { rating, description, price, imgSource, id, indexId }  = product
         return <FeaturedPro rating={rating} description={description} price={price} imgSource={imgSource} id={id} indexId={indexId} />})}
