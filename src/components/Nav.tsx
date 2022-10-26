@@ -98,6 +98,7 @@ const Nav = () => {
                   : `w-full font-normal text-sm md:text-[1rem] text-[#0A083A] flex flex-col items-start whitespace-nowrap after:w-[.3rem] after:h-[.3rem] transition-all duration-1000 pl-8 hover:pl-10 `
               }
               key={link.to}
+              onClick={() => setIsDisplayed(false)}
             >
               {link.displayName}
             </NavLink>
