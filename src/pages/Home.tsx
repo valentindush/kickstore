@@ -8,6 +8,7 @@ import rightArrow from '../assets/arrow-left-circle.png';
 import personImage from '../assets/Ellipse 6.png';
 import FeaturedPros from '../components/FeaturedPros';
 import lock from '../assets/lock.png'
+import Accessories from '../components/Accessories';
 
 const Home = () => {
   return (
@@ -31,7 +32,7 @@ const Home = () => {
         </div>
       </div>
       <div className="w-full h-fit flex flex-col items-center justify-center ">
-        <div className='relative w-full h-[80%] flex items-center justify-center'>
+        <div className='relative w-full flex items-center justify-center'>
           <img src={mainHeroImg} alt="" className='' />
           <img src={heroImg} alt="" className='absolute w-[18rem]' />
           <div className="w-[80%] h-fit p-3 flex items-center justify-center rounded-[2rem] absolute bottom-[7rem] bg-white gap-2 ">
@@ -46,6 +47,7 @@ const Home = () => {
         </div>
       </div>
       <FeaturedPros />
+      <Accessories />
     </div>
   )
 }

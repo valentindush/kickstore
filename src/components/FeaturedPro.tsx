@@ -66,7 +66,7 @@ const FeaturedPro: FC<FeaturedPro> = (props) => {
       <span className="w-[14rem] text-center">
         {description}
       </span>
-      <span className="font-bold">$ {price}</span>
+      <span className="font-bold">{`$ ${price}`}</span>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import FeaturedPro from "./FeaturedPro";
-
+import chevronLeft from '../assets/chevron-right.png'
 const FeaturedPros = () => {
   const featuredProducts: FeaturedPro[] = [
     {
@@ -46,6 +46,7 @@ const FeaturedPros = () => {
         const { rating, description, price, imgSource, id, indexId }  = product
         return <FeaturedPro rating={rating} description={description} price={price} imgSource={imgSource} id={id} indexId={indexId} />})}
     </div>
+    <span className="text-sm text-[#FF3C78] cursor-pointer flex gap-2">view all <img src={chevronLeft} alt="" className="h-5" /> </span>
   </div>);
 };
 
