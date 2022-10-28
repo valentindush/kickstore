@@ -9,6 +9,7 @@ import personImage from '../assets/Ellipse 6.png';
 import FeaturedPros from '../components/FeaturedPros';
 import lock from '../assets/lock.png'
 import Accessories from '../components/Accessories';
+import BestSeller from '../components/BestSeller';
 
 const Home = () => {
   return (
@@ -48,6 +49,7 @@ const Home = () => {
       </div>
       <FeaturedPros />
       <Accessories />
+      <BestSeller />
     </div>
   )
 }
