@@ -49,7 +49,7 @@ const Home = () => {
       </div>
       <FeaturedPros />
       <Accessories />
-      <BestSeller />
+      <BestSeller rating={5} improvement={'Improved stability, traction control & sole handling'} description={'Adidas Falcon Shoes for women - 2021 Edition'} price={120.50} />
     </div>
   )
 }
