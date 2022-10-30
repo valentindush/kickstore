@@ -21,7 +21,7 @@ const BestSeller: FC<BestSeller> = (props) => {
   );
 
   return (
-    <div className="w-full h-[120vh] bg-white py-[4rem] flex flex-wrap gap-4">
+    <div className="w-full h-[120vh] bg-white py-[4rem] flex flex-wrap">
       <div className="flex flex-wrap items-center justify-center">
         <h1 className="tracking-wide text-2xl text-[#0A083A] font-bold text-center">
           Best seller this week
@@ -32,7 +32,7 @@ const BestSeller: FC<BestSeller> = (props) => {
           <span className="text-lg font-medium text-[#0A083A]">women</span>
         </div>
       </div>
-      <div className="h-[80%] w-full flex flex-wrap justify-between gap-2">
+      <div className="h-[80%] w-full flex flex-wrap justify-between">
         <div className="h-1/2 w-full flex items-center justify-start relative">
           <div
             className="h-[58%] w-1/2 rounded-tr-xl rounded-br-xl"
@@ -72,11 +72,13 @@ const BestSeller: FC<BestSeller> = (props) => {
           </div>
           <Badge />
         </div>
-        <div className="h-1/2 w-full flex flex-col items-center justify-center ">
+        <div className="h-1/2 w-full flex flex-col items-center justify-center gap-[1.5rem] ">
           <div className="flex gap-4">{ratings}</div>
-          <span className="text-center text-xl font-semibold">{description}</span>
-          <span className="text-center text-lg font-semibold">$ {price}</span>
-          <button className="px-6 py-2 bg-[#0A083A] text-white rounded-md">Order now</button>
+          <span className="text-center text-2xl font-bold px-[2rem]">{description}</span>
+          <span className="text-center text-2xl font-bold">$ {price}</span>
+          <div className="flex flex-col items-center justify-center relative after:w-[8rem] after:h-[2rem] after:bg-[#315affbf] after:blur-[24px] after:absolute after:bottom-[-.5rem]">
+              <button className='px-10 py-3 bg-[#315BFF] text-white text-sm rounded-md tracking-wider font-medium z-10'>Shop Now</button>
+          </div>
         </div>
       </div>
     </div>
