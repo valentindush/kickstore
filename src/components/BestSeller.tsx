@@ -21,7 +21,7 @@ const BestSeller: FC<BestSeller> = (props) => {
   );
 
   return (
-    <div className="w-full h-[120vh] bg-white py-[4rem] flex flex-wrap">
+    <div className="w-full h-[110vh] bg-white py-[4rem] flex flex-wrap">
       <div className="flex flex-wrap items-center justify-center">
         <h1 className="tracking-wide text-2xl text-[#0A083A] font-bold text-center">
           Best seller this week

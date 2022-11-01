@@ -10,6 +10,7 @@ import FeaturedPros from '../components/FeaturedPros';
 import lock from '../assets/lock.png'
 import Accessories from '../components/Accessories';
 import BestSeller from '../components/BestSeller';
+import NewArrivals from '../components/NewArrivals';
 
 const Home = () => {
   return (
@@ -50,6 +51,7 @@ const Home = () => {
       <FeaturedPros />
       <Accessories />
       <BestSeller rating={5} improvement={'Improved stability, traction control & sole handling'} description={'Adidas Falcon Shoes for women - 2021 Edition'} price={120.50} />
+      <NewArrivals />
     </div>
   )
 }
