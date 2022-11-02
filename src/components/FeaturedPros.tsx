@@ -1,8 +1,9 @@
 import React from "react";
+import {FeaturedProInterface} from "./FeaturedPro";
 import FeaturedPro from "./FeaturedPro";
 import chevronLeft from '../assets/chevron-right.png'
 const FeaturedPros = () => {
-  const featuredProducts: FeaturedPro[] = [
+  const featuredProducts: FeaturedProInterface[] = [
     {
       rating: 5,
       description: 'Adidas Falcon Shoes for men - 2021 Edition',
@@ -42,7 +43,7 @@ const FeaturedPros = () => {
         <h1 className="text-2xl font-bold text-[#0A083A]">Featured Products</h1>
     </div>
     <div className="flex flex-col items-center justify-center gap-6 md:flex-row md:flex-wrap">
-        {featuredProducts.map((product: FeaturedPro) => {
+        {featuredProducts.map((product: FeaturedProInterface) => {
         const { rating, description, price, imgSource, id, indexId }  = product
         return <FeaturedPro rating={rating} description={description} price={price} imgSource={imgSource} id={id} indexId={indexId} />})}
     </div>

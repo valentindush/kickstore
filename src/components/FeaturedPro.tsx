@@ -5,7 +5,7 @@ import filledStar from "../assets/Star 4.svg";
 import unFilledStar from "../assets/Star 5.svg";
 import type { FC } from "react";
 
-interface FeaturedPro {
+export interface FeaturedProInterface {
   rating: number;
   description: string;
   price: Number;
@@ -19,7 +19,7 @@ interface color {
   secondColor: string;
 }
 
-const FeaturedPro: FC<FeaturedPro> = (props) => {
+const FeaturedPro: FC<FeaturedProInterface> = (props) => {
   const { rating, description, price, imgSource, id, indexId } = props;
   const colors: color[] = [
     { firstColor: "#FE7831", secondColor: "#FFDEBE" },
